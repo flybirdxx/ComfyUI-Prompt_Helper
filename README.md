@@ -31,5 +31,18 @@ A simple ComfyUI custom node that loads the local GGUF version of **Qwen3-4B-Z-I
 - If `llama-cpp-python` is missing, install dependencies then restart.
 - If no GGUF file is found, ensure it exists under `models/text_encoders`.
 
+## Changelog
+
+### v1.1.0 (2024-12-17)
+- **新增** 预编译的 `llama-cpp-python` Windows wheels (Python 3.10/3.11/3.12)，位于 `whl/` 目录
+- **新增** `.gitignore` 文件，忽略缓存目录
+- **优化** 安装体验，Windows 用户可直接使用本地 wheel 安装
+
+### v1.0.0
+- 初始发布
+- 支持本地 GGUF 模型加载
+- 集成 Z-Image Turbo 专用系统提示词
+- 自动扫描 `models/text_encoders` 目录
+
 ## License
 Apache-2.0 as per the upstream model.
