@@ -34,7 +34,7 @@ A simple ComfyUI custom node that loads the local GGUF version of **Qwen3-4B-Z-I
 ## Changelog
 
 ### v1.1.0 (2024-12-17)
-- **新增** 预编译的 `llama-cpp-python` Windows wheels (Python 3.10/3.11/3.12)，位于 `whl/` 目录
+- **Update precompiled files**
 - **新增** `.gitignore` 文件，忽略缓存目录
 - **优化** 安装体验，Windows 用户可直接使用本地 wheel 安装
 
