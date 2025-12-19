@@ -76,6 +76,7 @@ Shift: 7.0 (Crucial for skin texture)""",
                 "n_gpu_layers": ("INT", {"default": -1, "min": -1, "max": 100, "tooltip": "-1 表示将所有层加载到 GPU (推荐)"}),
                 "max_new_tokens": ("INT", {"default": 512, "min": 16, "max": 4096}),
                 "temperature": ("FLOAT", {"default": 0.7, "min": 0.0, "max": 1.0, "step": 0.01}),
+                "seed": ("INT", {"default": -1, "min": -1, "max": 2147483647, "tooltip": "随机种子，-1 表示使用随机种子"}),
             }
         }
 
@@ -124,7 +125,7 @@ Shift: 7.0 (Crucial for skin texture)""",
             print(f"Error loading GGUF model: {e}")
             raise e
 
-    def generate(self, gguf_name, system_prompt, prompt, n_ctx, n_gpu_layers, max_new_tokens, temperature):
+    def generate(self, gguf_name, system_prompt, prompt, n_ctx, n_gpu_layers, max_new_tokens, temperature, seed):
         llm = self.load_gguf(gguf_name, n_ctx, n_gpu_layers)
         
         messages = [
@@ -139,11 +140,17 @@ Shift: 7.0 (Crucial for skin texture)""",
         ]
 
         try:
-            response = llm.create_chat_completion(
-                messages=messages,
-                max_tokens=max_new_tokens,
-                temperature=temperature,
-            )
+            completion_params = {
+                "messages": messages,
+                "max_tokens": max_new_tokens,
+                "temperature": temperature,
+            }
+            
+            # 只有当 seed >= 0 时才设置 seed 参数
+            if seed >= 0:
+                completion_params["seed"] = seed
+            
+            response = llm.create_chat_completion(**completion_params)
             output_text = response["choices"][0]["message"]["content"]
             return (output_text,)
         except Exception as e:

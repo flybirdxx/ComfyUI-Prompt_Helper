@@ -26,12 +26,16 @@ A simple ComfyUI custom node that loads the local GGUF version of **Qwen3-4B-Z-I
 - `n_gpu_layers`: -1 loads all layers to GPU when possible.
 - `max_new_tokens`: generation length cap.
 - `temperature`: sampling temperature (0–1).
+- `seed`: random seed for reproducible outputs (default -1, use random seed).
 
 ## FAQ
 - If `llama-cpp-python` is missing, install dependencies then restart.
 - If no GGUF file is found, ensure it exists under `models/text_encoders`.
 
 ## Changelog
+
+### v1.2.0 (2024-12-17)
+- **新增** 随机种子 (`seed`) 参数，支持可复现的输出
 
 ### v1.1.0 (2024-12-17)
 - **Update precompiled files**
