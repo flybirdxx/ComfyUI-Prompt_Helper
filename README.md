@@ -27,8 +27,8 @@ A professional ComfyUI custom node suite providing prompt engineering tools, inc
 - 📖 模型卡片: [Qwen3-4B-Z-Image-Engineer](https://huggingface.co/BennyDaBall/qwen3-4b-Z-Image-Engineer)
 
 ### 📄 System Prompt Extractor
-- 🎯 从 `prompt_utils_2512.py` 提取详细的系统提示词
-- 🌍 支持英文和中文系统提示词
+- 🎯 提供详细的英文和中文系统提示词
+- 🌍 支持中英文切换
 - 🔧 可与其他 LLM 优化节点串联使用
 
 ## 🚀 安装指南
