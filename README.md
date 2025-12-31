@@ -7,16 +7,10 @@
 
 A professional ComfyUI custom node suite providing prompt engineering tools, including local GGUF text encoder support and system prompt extraction.
 
-## 📋 目录
+## 📄 更新日志
 
-- [功能特性](#功能特性)
-- [安装指南](#安装指南)
-- [使用方法](#使用方法)
-- [节点说明](#节点说明)
-- [更新日志](#更新日志)
-- [参数配置](#参数配置)
-- [常见问题](#常见问题)
-- [许可证](#许可证)
+本文档的详细更新记录已集中维护在 `doc/update.md`，可点击查看完整变更历史： [查看更新日志](doc/update.md)
+（若在某些渲染环境中无法自动跳转，请在仓库根目录打开 `doc/update.md`）
 
 ## ✨ 功能特性
 
