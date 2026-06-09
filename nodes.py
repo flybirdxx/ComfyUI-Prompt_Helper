@@ -113,8 +113,7 @@ Shift: 7.0 (Crucial for skin texture)""",
                 model_path=gguf_path,
                 n_ctx=n_ctx,
                 n_gpu_layers=n_gpu_layers,
-                verbose=True,
-                logits_all=True
+                verbose=True
             )
             
             print("GGUF Model loaded successfully!")
@@ -144,6 +143,10 @@ Shift: 7.0 (Crucial for skin texture)""",
                 "messages": messages,
                 "max_tokens": max_new_tokens,
                 "temperature": temperature,
+                "top_p": 0.8,
+                "top_k": 20,
+                "repeat_penalty": 1.1,
+                "stop": ["<|im_end|>", "<|endoftext|>", "</s>"],
             }
             
             # 只有当 seed >= 0 时才设置 seed 参数
